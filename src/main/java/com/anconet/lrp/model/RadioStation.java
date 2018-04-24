@@ -6,14 +6,14 @@ import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
 
 public class RadioStation {
-	
+
 	private String name = "";
 	private String id = "";
 	private URL url = null;
 	private boolean isIcy = false;
 	private Header userAgent = null;
 	private Header referer = null;
-	
+
 	public RadioStation(String name, URL url, boolean isIcy, Header userAgent, Header referer) {
 		super();
 		this.name = name;
@@ -23,12 +23,11 @@ public class RadioStation {
 		this.userAgent = userAgent;
 		this.referer = referer;
 	}
-	
 
 	public RadioStation(String name, URL url, boolean isIcy, String userAgent, String referer) {
 		this(name, url, isIcy, new BasicHeader("User-Agent", userAgent), new BasicHeader("Referer", referer));
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -48,7 +47,7 @@ public class RadioStation {
 	public void setUrl(URL url) {
 		this.url = url;
 	}
-	
+
 	public String getUrlAsString() {
 		return url.toString();
 	}
@@ -76,8 +75,8 @@ public class RadioStation {
 	public void setReferer(Header referer) {
 		this.referer = referer;
 	}
-	
+
 	private String generateIdFrom(String input) {
-		return input.trim().toLowerCase().replaceAll("\\s|\\.","");
+		return input.trim().toLowerCase().replaceAll("\\s|\\.", "");
 	}
 }

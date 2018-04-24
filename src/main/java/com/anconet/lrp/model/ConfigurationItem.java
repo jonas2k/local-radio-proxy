@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.http.Header;
 
 public class ConfigurationItem {
-	
+
 	private int port;
 	private Header defaultUserAgentHeader;
 	private Header defaultRefererHeader;
@@ -14,7 +14,7 @@ public class ConfigurationItem {
 	private boolean proxyMode;
 	private String proxyHost;
 	private int proxyPort;
-	
+
 	private List<RadioStation> radioStations = new ArrayList<RadioStation>();
 
 	public int getPort() {
@@ -44,7 +44,7 @@ public class ConfigurationItem {
 	public List<RadioStation> getRadioStations() {
 		return radioStations;
 	}
-	
+
 	public boolean isProxyMode() {
 		return proxyMode;
 	}
@@ -52,7 +52,7 @@ public class ConfigurationItem {
 	public void setProxyMode(boolean proxyMode) {
 		this.proxyMode = proxyMode;
 	}
-	
+
 	public String getProxyHost() {
 		return proxyHost;
 	}

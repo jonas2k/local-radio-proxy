@@ -10,20 +10,20 @@ import org.apache.http.Header;
 import org.apache.http.HttpRequest;
 
 public class Utils {
-	
+
 	public static boolean isReallyHeadless() {
-        if (GraphicsEnvironment.isHeadless()) {
-            return true;
-        }
-        try {
-            GraphicsDevice[] screenDevices = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
-            return screenDevices == null || screenDevices.length == 0;
-        } catch (HeadlessException e) {
-            e.printStackTrace();
-            return true;
-        }
-    }
-	
+		if (GraphicsEnvironment.isHeadless()) {
+			return true;
+		}
+		try {
+			GraphicsDevice[] screenDevices = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
+			return screenDevices == null || screenDevices.length == 0;
+		} catch (HeadlessException e) {
+			e.printStackTrace();
+			return true;
+		}
+	}
+
 	public static void writeHeader(String header, OutputStream outputStream) {
 
 		try {
@@ -32,7 +32,7 @@ public class Utils {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void writeHeader(Header header, OutputStream outputStream) {
 
 		try {
@@ -41,7 +41,7 @@ public class Utils {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static String removeFirstSlashFromHttpRequestUri(HttpRequest httpRequest) {
 		return httpRequest.getRequestLine().getUri().replaceFirst("/", "");
 	}
